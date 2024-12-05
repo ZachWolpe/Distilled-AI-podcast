@@ -55,6 +55,39 @@ How `LPU`s work:
 - [NotebookLLM Summary](https://notebooklm.google.com/notebook/ca31c7a7-73c6-41cc-b3e3-c6e55386191f?_gl=1*bsmjvd*_ga*MjY4NTEwODcwLjE3MjY1NjQ0NjQ.*_ga_W0LDH41ZCB*MTczMDI2MTc3My43LjEuMTczMDI2MTc3My42MC4wLjA.)
 
 
+
+----
+# Booklist
+
+```
+| **Title**                                    | **Author**                                  | **Subject**                                                                                 |
+|----------------------------------------------|---------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Nikola Tesla: My Inventions**              | Nikola Tesla                                | Tesla’s life, inventions, and thoughts on technology.                                       |
+| **Steve Jobs**                               | Walter Isaacson                             | The life of Steve Jobs, based on authorized interviews.                                     |
+| **Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future** | Ashlee Vance                 | Biography of Elon Musk's innovations and vision.                                            |
+| **Autobiography of Andrew Carnegie**         | Andrew Carnegie                             | Carnegie’s industrialist journey and philanthropy.                                          |
+| **Henry Ford: My Life and Work**             | Henry Ford                                  | Ford’s reflections on revolutionizing the automobile industry.                              |
+| **I Am a Mathematician**                     | Norbert Wiener                              | The journey of the father of cybernetics in engineering and mathematics.                    |
+| **The Wright Brothers**                      | David McCullough                            | Story of Wilbur and Orville Wright and the invention of flight.                             |
+| **Leonardo da Vinci**                        | Walter Isaacson                             | Biography of Leonardo da Vinci’s inventive genius.                                          |
+| **Einstein: His Life and Universe**          | Walter Isaacson                             | Life and scientific contributions of Albert Einstein.                                       |
+| **Edison: A Biography**                      | Matthew Josephson                           | A study of Thomas Edison’s transformative inventions.                                       |
+| **Alexander Graham Bell: Reluctant Genius**  | Charlotte Gray                              | The story of Bell’s invention of the telephone and humanitarian efforts.                    |
+| **James Watt: Making the World Anew**        | Ben Russell                                 | Exploration of James Watt’s role in the Industrial Revolution.                              |
+| **Ada Lovelace: The Making of a Computer Scientist** | Christopher Hollings, Ursula Martin, Adrian Rice | Biography of Ada Lovelace, the first computer programmer.                            |
+| **The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution** | Walter Isaacson | Stories of tech pioneers, including Alan Turing and Bill Gates.                             |
+| **Empire of the Air: The Men Who Made Radio**| Tom Lewis                                   | Stories of radio pioneers Guglielmo Marconi, Lee de Forest, and Edwin Armstrong.            |
+| **Frank Lloyd Wright: A Biography**          | Meryle Secrest                              | Biography of Frank Lloyd Wright and his engineering feats in architecture.                  |
+| **Howard Hughes: His Life and Madness**      | Donald L. Barlett, James B. Steele          | Life of Howard Hughes, entrepreneur and aviation pioneer.                                   |
+| **Building St. Paul’s**                      | James W.P. Campbell                         | Biography of Sir Christopher Wren and his architectural achievements.                       |
+| **Skunk Works: A Personal Memoir of My Years at Lockheed** | Ben R. Rich, Leo Janos           | Innovations at Lockheed and stealth technology development.                                 |
+| **Becoming Hewlett and Packard: A Personal Biography of the Founders** | Steve W. Hoover                     | Biography of HP’s founders and their partnership.                                           |
+| **The Man Behind the Microchip: Robert Noyce and the Invention of Silicon Valley** | Leslie Berlin                      | Life of Robert Noyce, co-founder of Intel and semiconductor pioneer.                        |
+| **Only the Paranoid Survive**                | Andrew S. Grove                             | Memoir of Intel’s former CEO and his leadership insights.                                   |
+```
+
+
+
 ---
 ```
 : 29.1.2024
