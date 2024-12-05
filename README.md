@@ -59,7 +59,7 @@ How `LPU`s work:
 ----
 # Booklist
 
-```
+
 | **Title**                                    | **Author**                                  | **Subject**                                                                                 |
 |----------------------------------------------|---------------------------------------------|---------------------------------------------------------------------------------------------|
 | **Nikola Tesla: My Inventions**              | Nikola Tesla                                | Tesla’s life, inventions, and thoughts on technology.                                       |
@@ -84,7 +84,11 @@ How `LPU`s work:
 | **Becoming Hewlett and Packard: A Personal Biography of the Founders** | Steve W. Hoover                     | Biography of HP’s founders and their partnership.                                           |
 | **The Man Behind the Microchip: Robert Noyce and the Invention of Silicon Valley** | Leslie Berlin                      | Life of Robert Noyce, co-founder of Intel and semiconductor pioneer.                        |
 | **Only the Paranoid Survive**                | Andrew S. Grove                             | Memoir of Intel’s former CEO and his leadership insights.                                   |
-```
+| **The HP Way: How Bill Hewlett and I Built Our Company** | David Packard                        | Story of HP’s founders and their business philosophy.                                       |
+| **The Idea Factory: Bell Labs and the Great Age of American Innovation** | Jon Gertner                | History of Bell Labs and its contributions to technology.                                   |
+| **The Master Switch: The Rise and Fall of Information Empires** | Tim Wu                           | Exploration of information empires and their impact on society.                             |
+| **The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human
+
 
 
 
