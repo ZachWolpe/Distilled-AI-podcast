@@ -6,6 +6,16 @@ __pycache__/
 # C extensions
 *.so
 
+# ingore all episodes (large files)
+episodes/
+
+# Environment files
+**/.env
+code/.env
+
+# ignore dummy/test files
+code/test/*
+
 # Distribution / packaging
 .Python
 build/
