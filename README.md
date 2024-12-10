@@ -1,4 +1,4 @@
-# Distilled-AI-podcast
+# Spark Podcast 💣
 
 
 Summaries of &amp; discussion about great stories (auto)-biographies. Enhanced with AI.
