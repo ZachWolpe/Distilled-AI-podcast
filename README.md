@@ -22,6 +22,14 @@ Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled
 <Coming Soon>
 
 
+---
+# Core Resources
+
+#### AI Resources:
+
+- [Eleven Labs API](https://elevenlabs.io/api)
+
+
 #### Current Stack:
 
 - [NotebookLlama](https://github.com/meta-llama/llama-recipes/tree/main/recipes/quickstart/NotebookLlama)
