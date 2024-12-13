@@ -1,0 +1,48 @@
+# Expected to run from main directory.
+
+stage_1_generate_script_from_pdf:
+  episode_name: "My Inventions - Nikola Tesla"
+  path_to_pdf: "./pdfs/Nikola_Tesla_1919_My_Inventions.pdf"
+  output_dir: "./episodes/nikola_tesla_my_inventions/"
+  output_name: "podcast_script.txt"
+
+
+stage_2_generate_audio_from_script:
+  audio_output_name: "audio_podcast.wav"
+  clean_script_name: "clean_script.txt"
+
+
+stage_3_generate_reel_script_from_script:
+  real_prompt_name: "reel_prompt.txt"
+  output_name: "reel_script.txt"
+
+
+stage_4_generate_reel_images:
+  subject: "Nikola Tesla"
+  image_dir: "/AI_images/"
+  prompts:
+    # only 2 used!
+    # - "[SUBJECT] walking the streets of NYC, in colour"
+    # - "[SUBJECT] arguing with Thomas Edison, in colour"
+    - "[SUBJECT] working on an electrical system, in colour."
+    - "[SUBJECT] walking the streets of Croatia, in colour."
+
+
+stage_5_fetch_images_from_google:
+  keyword: "Nikola Tesla"
+  image_dir: "/google_images/"
+
+
+stage_6_generate_video_from_images.py:
+  # video_file_name: "raw_reel_clip."
+
+stage_7_generate_audio_from_reel_script:
+  clean_reel_script_name: "clean_reel_script.txt"
+  audio_reel_output_name: "audio_reel.wav"
+
+
+
+# env_file: ".env"
+  # api_keys:
+  #   openai_api_key: "${OPENAI_API_KEY}"
+  #   other_api_key: "${OTHER_API_KEY}"

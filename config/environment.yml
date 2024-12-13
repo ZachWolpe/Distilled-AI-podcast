@@ -1,0 +1,22 @@
+name: spark-podcast
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - boto3  # for AWS S3 interactions
+  - python-dotenv  # for .env file handling
+  - requests  # for API calls
+  - pandas
+  - pip:
+    - google-cloud-aiplatform  # for Gemini API
+    - langchain  # based on the LL_API_KEY presence
+    - openai  # for OpenAI API
+    - python-gemini-api  # for Gemini API
+    - google-generativeai
+    - grpcio==1.67.1
+    - replicate==1.0.4
+    - icrawler==0.6.9
+    - Pillow==9.5.0 
+

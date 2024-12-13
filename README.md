@@ -1,10 +1,26 @@
 # Spark Podcast 💣
 
 
-Summaries of &amp; discussion about great stories (auto)-biographies. Enhanced with AI.
+Summaries of &amp; discussion about great stories, primarily (auto)-biographies. Particular of great engineers throughout history. Written and read by AI.
 
 
 Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled-audio).
+
+
+#### Stack:
+
+- [Gemini](https://ai.google.dev/)
+- [ChatGPT-TTS](https://platform.openai.com/docs/guides/text-to-speech)
+- [Replicate (Parler-TTS)](https://replicate.com/cjwbw/parler-tts)
+- OpenCV
+- Python
+
+
+----
+# Project Structure
+
+- The core directory hosts the entire project, links, instructions, and resources.
+- Everything in the `src` directory can run independently, and will eventually be packaged into a docker container to run on `EC2`.
 
 
 ----
@@ -13,6 +29,59 @@ Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled
 ![Module 1](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%201-a.png)
 ![Module 2](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%202.png)
 ![Module 3](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%203.png)
+
+---
+# Build
+
+### 1. Create and activate the conda environment:
+
+##### Option 1: Using the environment file directly:
+
+```bash
+conda env create -f environment.yml
+conda activate spark-podcast
+```
+
+##### Option 2: Using the setup script:
+    
+```bash
+chmod +x ./config/setup.sh
+./config/setup.sh
+```
+
+Activate the environment
+
+```bash
+conda activate spark-podcast
+```
+
+
+### 2. Link `.env` file:
+
+```bash
+source .env
+```
+
+### 3. Generate the podcast script:
+
+```bash
+python src/001_generate_podcast_script.py --yaml_path './src/runtime.yml'
+```
+
+
+
+### N. (Optional) Run the test suite.
+
+```bash
+python src/prompt_engine.py --yaml_path './src/runtime.yml'
+```
+
+
+
+
+
+
+
 
 
 
@@ -24,17 +93,6 @@ Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled
 
 ---
 # Core Resources
-
-#### AI Resources:
-
-- [Eleven Labs API](https://elevenlabs.io/api)
-
-
-#### Current Stack:
-
-- [NotebookLlama](https://github.com/meta-llama/llama-recipes/tree/main/recipes/quickstart/NotebookLlama)
-- [NotebookLM](https://notebooklm.google/)
-
 
 #### Excellent LLM Resources:
 
@@ -54,8 +112,10 @@ Compare LLMs:
 - [🏆 Chatbot Arena LLM Leaderboard](https://lmarena.ai/)
 - [Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)
 
+
 #### Text To Speech (TTS) Resources:
 
+- [Eleven Labs API](https://elevenlabs.io/api)
 - [TTS Arena: Benchmarking TTS Models in the Wild](https://huggingface.co/spaces/TTS-AGI/TTS-Arena)
 - [ChatTTS](https://chattts.com/)
 - [Parler-TTS](https://github.com/huggingface/parler-tts)
@@ -64,18 +124,13 @@ Compare LLMs:
 
 
 
-What is `RAG`:
+#### What is `RAG`
 
 - [Databricks blog - what is RAG?](https://www.databricks.com/glossary/retrieval-augmented-generation-rag)
 - [IMB blog - what is RAG?](https://research.ibm.com/blog/retrieval-augmented-generation-RAG)
 - [Nvidia blog - what is RAG?](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/)
 - [AWS blog - what is RAG?](https://aws.amazon.com/de/what-is/retrieval-augmented-generation/)
 
-How `LPU`s work:
-
-- [LPU: A Latency-Optimized and Highly Scalable Processor for Large Language Model Inference](https://arxiv.org/html/2408.07326v1)
-- [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/pdf/1704.04760)
-- [NotebookLLM Summary](https://notebooklm.google.com/notebook/ca31c7a7-73c6-41cc-b3e3-c6e55386191f?_gl=1*bsmjvd*_ga*MjY4NTEwODcwLjE3MjY1NjQ0NjQ.*_ga_W0LDH41ZCB*MTczMDI2MTc3My43LjEuMTczMDI2MTc3My42MC4wLjA.)
 
 
 
@@ -113,9 +168,11 @@ How `LPU`s work:
 | **The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human** | Walter Isaacson | Biography of Jennifer Doudna and the CRISPR gene-editing revolution.
 
 
+
+
 ---
 ```
-: 29.1.2024
+: 13.12.2024
 : zachcolinwolpe@gmail.com
 ```
 ----

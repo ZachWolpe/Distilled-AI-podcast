@@ -6,15 +6,19 @@ __pycache__/
 # C extensions
 *.so
 
+# ignore all large files (pdfs)
+pdfs/*
+
 # ingore all episodes (large files)
 episodes/
+episodes/*
 
 # Environment files
 **/.env
-code/.env
+src/.env
 
 # ignore dummy/test files
-code/test/*
+src/test/*
 
 # Distribution / packaging
 .Python
