@@ -29,7 +29,7 @@ stage_4_generate_reel_images:
 
 
 stage_5_fetch_images_from_google:
-  image_dir: "/google_images/"
+  image_dir: "google_images/"
   keywords:
     - "Nikola Tesla in the USA"
     - "Nikola Tesla with Thomas Edison"

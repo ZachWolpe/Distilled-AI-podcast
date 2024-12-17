@@ -23,15 +23,9 @@ Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled
 - Everything in the `src` directory can run independently, and will eventually be packaged into a docker container to run on `EC2`.
 
 
-----
-# Project Architecture
-
-![Module 1](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%201-a.png)
-![Module 2](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%202-a.png)
-![Module 3](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%203-a.png)
 
 ---
-# Build
+# Build Environment
 
 ### 1. Create and activate the conda environment:
 
@@ -62,11 +56,39 @@ conda activate spark-podcast
 source .env
 ```
 
-### 3. Generate the podcast script:
+
+----
+# Execute Pipeline
+
+To execute the pipeline, provide the following inputs:
+
+- `runtime.yml`: The runtime configuration file.
+- `book.pdf`: The book to be summarized. The book's path is provided in the `runtime.yml` file.
+
+
+#### Option 1. Run the entire pipeline script:
 
 ```bash
-python src/001_generate_podcast_script.py --yaml_path './src/runtime.yml'
 ```
+
+
+#### Option 2. Run each step manually:
+
+
+```bash
+python src/001_generate_podcast_script.py
+# Alternative: python src/001_generate_podcast_script.py --yaml_path './src/runtime.yml'
+
+python src/002_generate_audio_from_script.py
+python src/003_generate_reel_script.py
+python "src/004_generate_reel_images.py"
+python "src/005_fetch_images_from_google.py" # BUG: In core dependency.
+python "src/006_generate_video_from_images.py" # Only Execute IF images supplied by `005` or manually.
+python "src/007_generate_audio_from_reel_script.py"
+python "src/008_put_raw_files_to_s3.py"
+```
+
+
 
 
 
@@ -75,6 +97,20 @@ python src/001_generate_podcast_script.py --yaml_path './src/runtime.yml'
 ```bash
 python src/prompt_engine.py --yaml_path './src/runtime.yml'
 ```
+
+
+
+
+
+
+
+
+----
+# Project Architecture
+
+![Module 1](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%201-a.png)
+![Module 2](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%202-a.png)
+![Module 3](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%203-a.png)
 
 
 

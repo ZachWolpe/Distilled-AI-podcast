@@ -16,16 +16,21 @@ from prompt_engine import load_yaml_config_from_argparse
 from icrawler.builtin import GoogleImageCrawler
 from dotenv import load_dotenv
 from PIL import Image
+import shutil
 import time
 import os
 
 
 def google_image_search(keyword='Nikola Tesla', max_num=5, save_loc='./'):
     """
-    https://icrawler.readthedocs.io/_/downloads/en/latest/pdf/
+    Documentation:
+        https://icrawler.readthedocs.io/_/downloads/en/latest/pdf/
     """
+    print('>>>>>> launching job...., save_loc: ', save_loc)
     google_Crawler = GoogleImageCrawler(storage={'root_dir': save_loc})
-    google_Crawler.crawl(keyword=keyword, max_num=max_num, )
+    google_Crawler.crawl(keyword=keyword, max_num=max_num)
+    print('>>>>>> FINISH job')
+
 
 
 def resize_image(img, width=1080, height=1920):
@@ -51,7 +56,12 @@ if __name__ == "__main__":
     exit
 
     for idx, keyword in enumerate(stage_5_config['keywords']):
-        batch_directory = save_loc + f'batch_{idx}'
+        batch_directory = save_loc + f'batch_{idx}/'
+        print('::batch_directory : ', batch_directory)
+
+        # create batch_dir
+        os.makedirs(batch_directory, exist_ok=True)
+
         google_image_search(
             keyword=keyword,
             max_num=stage_5_config['n_images_per_keyword'],
@@ -59,23 +69,39 @@ if __name__ == "__main__":
         )
 
         # move to main directory
-        for file in os.listdir(batch_directory):
-            if file.endswith(('.png', '.jpg', '.jpeg')):
-                old_path = batch_directory + f'/{file}'
-                new_path = save_loc + f'/{file}'
-                os.rename(old_path, new_path)
-        os.remove(batch_directory)
+        print('SAVE COMPLETE -----> -----> MOVE TO MAIN DIR.')
+        break
+    #     for file in os.listdir(batch_directory):
+    #         if file.endswith(('.png', '.jpg', '.jpeg')):
+    #             old_path = batch_directory + f'/{file}'
+    #             new_path = save_loc + f'/{file}'
+    #             # os.rename(old_path, new_path)
+    #             # updated
+    #             # move to new dir
+    #             shutil.move(old_path, new_path)
+    #     try:
+    #         shutil.rmtree(batch_directory)
+    #     except Exception as e:
+    #         _error = f"""
 
-    # read and resize image
-    for img_file in os.listdir(save_loc):
-        if img_file.endswith(('.png', '.jpg', '.jpeg')):
-            img_path = os.path.join(save_loc, img_file)
-            resized_image = resize_image(img_path)
-            resized_image.save(img_path)  # Overwrite the original image with the resized one
+    #             Unable to rmtree (directory)
+    #             old_path : {old_path}
+    #             new_path : {new_path}
 
-    end_time = time.time()
-    print('Images downloaded successfully.')
+    #             Exception: {e}
+    #         """
+    #         print(_error)
 
-    # Calculate and print execution time
-    execution_time = end_time - start_time
-    print(f'Execution time: {execution_time:.2f} seconds')
+    # # read and resize image
+    # for img_file in os.listdir(save_loc):
+    #     if img_file.endswith(('.png', '.jpg', '.jpeg')):
+    #         img_path = os.path.join(save_loc, img_file)
+    #         resized_image = resize_image(img_path)
+    #         resized_image.save(img_path)  # Overwrite the original image with the resized one
+
+    # end_time = time.time()
+    # print('Images downloaded successfully.')
+
+    # # Calculate and print execution time
+    # execution_time = end_time - start_time
+    # print(f'Execution time: {execution_time:.2f} seconds')
