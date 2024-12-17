@@ -21,16 +21,25 @@ stage_4_generate_reel_images:
   subject: "Nikola Tesla"
   image_dir: "/AI_images/"
   prompts:
-    # only 2 used!
-    # - "[SUBJECT] walking the streets of NYC, in colour"
-    # - "[SUBJECT] arguing with Thomas Edison, in colour"
+  # only 2 used!
     - "[SUBJECT] working on an electrical system, in colour."
     - "[SUBJECT] walking the streets of Croatia, in colour."
+    # - "[SUBJECT] walking the streets of NYC, in colour"
+    # - "[SUBJECT] arguing with Thomas Edison, in colour"
 
 
 stage_5_fetch_images_from_google:
-  keyword: "Nikola Tesla"
   image_dir: "/google_images/"
+  keywords:
+    - "Nikola Tesla in the USA"
+    - "Nikola Tesla with Thomas Edison"
+    - "Young Nikola Tesla"
+    - "Nikola Tesla inventing"
+  n_images_per_keyword: 2
+  # deprecated
+  # keyword: "Nikola Tesla"
+  # n_images_to_download: 5
+  
 
 
 stage_6_generate_video_from_images.py:

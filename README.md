@@ -27,8 +27,8 @@ Podcast available on [Spotify](https://podcasters.spotify.com/pod/show/distilled
 # Project Architecture
 
 ![Module 1](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%201-a.png)
-![Module 2](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%202.png)
-![Module 3](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%203.png)
+![Module 2](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%202-a.png)
+![Module 3](https://github.com/ZachWolpe/Distilled-AI-podcast/blob/main/assets/architecture/module%203-a.png)
 
 ---
 # Build

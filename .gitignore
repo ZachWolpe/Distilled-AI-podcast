@@ -3,11 +3,19 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore test files
+testing-space.ipynb
+testing-script.py
+src/test/*
+
 # C extensions
 *.so
 
 # ignore all large files (pdfs)
 pdfs/*
+
+.DS_Store
+**/.DS_Store
 
 # ingore all episodes (large files)
 episodes/

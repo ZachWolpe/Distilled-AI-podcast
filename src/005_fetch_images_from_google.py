@@ -4,6 +4,9 @@
 
 Fetch images from Google.
 
+Documentation:
+    https://icrawler.readthedocs.io/_/downloads/en/latest/pdf/
+
 : zachcolinwolpe@gmail.com
 : 13.12.24
 ---------------------------------------------------------------------------
@@ -18,8 +21,11 @@ import os
 
 
 def google_image_search(keyword='Nikola Tesla', max_num=5, save_loc='./'):
+    """
+    https://icrawler.readthedocs.io/_/downloads/en/latest/pdf/
+    """
     google_Crawler = GoogleImageCrawler(storage={'root_dir': save_loc})
-    google_Crawler.crawl(keyword=keyword, max_num=max_num)
+    google_Crawler.crawl(keyword=keyword, max_num=max_num, )
 
 
 def resize_image(img, width=1080, height=1920):
@@ -40,11 +46,25 @@ if __name__ == "__main__":
 
     save_loc = stage_1_config['output_dir'] + stage_5_config['image_dir']
     os.makedirs(save_loc, exist_ok=True)
-    google_image_search(
-        keyword=stage_5_config['keyword'],
-        max_num=5,
-        save_loc=save_loc
-    )
+
+    print('save:loc', save_loc)
+    exit
+
+    for idx, keyword in enumerate(stage_5_config['keywords']):
+        batch_directory = save_loc + f'batch_{idx}'
+        google_image_search(
+            keyword=keyword,
+            max_num=stage_5_config['n_images_per_keyword'],
+            save_loc=batch_directory
+        )
+
+        # move to main directory
+        for file in os.listdir(batch_directory):
+            if file.endswith(('.png', '.jpg', '.jpeg')):
+                old_path = batch_directory + f'/{file}'
+                new_path = save_loc + f'/{file}'
+                os.rename(old_path, new_path)
+        os.remove(batch_directory)
 
     # read and resize image
     for img_file in os.listdir(save_loc):
